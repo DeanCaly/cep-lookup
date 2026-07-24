@@ -26,18 +26,21 @@ def get_address(cep):
               print("cep não encontrado")
               return None
        return data
+
+def show_address(data):
+       info = f"CEP: {data['cep']}\n"\
+       f"Logradouro: {data['logradouro']}\n"\
+       f"Bairro: {data['bairro']}\n"\
+       f"Cidade: {data['localidade']}\n"\
+       f"Estado: {data['uf']}"
+
+       print(info)
        
        
 cep = validate_cep()
-
 data = get_address(cep)
+show_address(data)
 
 
-info = f"Cep: {data['cep']}\n"\
-       f"Logradouro: {data['logradouro']}\n"\
-       f"Bairro: {data['bairro']}\n"\
-       f"Local: {data['localidade']}\n"\
-       f"Estado: {data['uf']}"
 
 
-print(info)
